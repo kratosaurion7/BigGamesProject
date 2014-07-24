@@ -41,24 +41,9 @@ class Game():
             for event in pygame.event.get():
                 self.HandleEvent(event)
 
-            keys = pygame.key.get_pressed()
-            if keys[K_RIGHT] == True:
-                self.rec.X += 1
-                self.rec.X = self.ClampValue(self.rec.X, 0, self.surfaceWidth - self.paddleWidth)
-            if keys[K_LEFT] == True:
-                self.rec.X -= 1
-                self.rec.X = self.ClampValue(self.rec.X, 0, self.surfaceWidth - self.paddleWidth)
-            if keys[K_d] == True:
-                self.rec2.X += 1
-                self.rec2.X = self.ClampValue(self.rec2.X, 0, self.surfaceWidth - self.paddleWidth)
-            if keys[K_a] == True:
-                self.rec2.X -= 1
-                self.rec2.X = self.ClampValue(self.rec2.X, 0, self.surfaceWidth - self.paddleWidth)
-
             self.Update()
 
             self.Draw()
-
             
     def Draw(self):
         self.drawSurface.fill((0, 0, 0))
@@ -71,20 +56,26 @@ class Game():
 
     def Update(self):
         # Iterate and update surface objects
+        keys = pygame.key.get_pressed()
+        if keys[K_RIGHT] == True:
+            self.rec.X += 1
+            self.rec.X = self.ClampValue(self.rec.X, 0, self.surfaceWidth - self.paddleWidth)
+        if keys[K_LEFT] == True:
+            self.rec.X -= 1
+            self.rec.X = self.ClampValue(self.rec.X, 0, self.surfaceWidth - self.paddleWidth)
+        if keys[K_d] == True:
+            self.rec2.X += 1
+            self.rec2.X = self.ClampValue(self.rec2.X, 0, self.surfaceWidth - self.paddleWidth)
+        if keys[K_a] == True:
+            self.rec2.X -= 1
+            self.rec2.X = self.ClampValue(self.rec2.X, 0, self.surfaceWidth - self.paddleWidth)
+
+
         return
 
     def HandleEvent(self, event):
-        #if event.type == KEYDOWN:
-            #if event.key == K_RIGHT:
-            #    self.rec.X += 1
-            #if event.key == K_LEFT:
-            #    self.rec.X -= 1
-        #if event.type == KEYUP:
-        #    move = False
         if event.type == QUIT:
             pygame.quit()
-
-    
 
     def DrawObject(self, object, surface):
         objectSurface = Surface((object.Width, object.Height))
