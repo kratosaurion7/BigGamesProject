@@ -9,8 +9,8 @@ class Game():
 
     gameObjects = []
 
-    surfaceHeight = 600;
-    surfaceWidth = 800;
+    surfaceHeight = 600
+    surfaceWidth = 800
 
     paddleWidth = 150
     paddleHeight = 25
