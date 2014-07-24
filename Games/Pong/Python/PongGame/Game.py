@@ -70,9 +70,6 @@ class Game():
             self.rec2.X -= 1
             self.rec2.X = self.ClampValue(self.rec2.X, 0, self.surfaceWidth - self.paddleWidth)
 
-
-        return
-
     def HandleEvent(self, event):
         if event.type == QUIT:
             pygame.quit()
