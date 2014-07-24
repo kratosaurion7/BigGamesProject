@@ -1,8 +1,8 @@
-class Rectangle():
-    xCoordinate = 0
-    yCoordinate = 0
+class DrawRectangle():
+    X = 0
+    Y = 0
 
-    height = 0
-    width = 0
+    Height = 0
+    Width = 0
 
-    color = (255, 255, 255)
+    Color = (255, 255, 255)

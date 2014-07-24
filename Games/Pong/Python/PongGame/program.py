@@ -1,38 +1,43 @@
 import pygame, sys
 from pygame import *
 
-xCoord = 0
-yCoord = 0
+import Game
 
-move = False;
+#xCoord = 0
+#yCoord = 0
 
-def MoveRight():
-    global xCoord
-    xCoord += 1
+#move = False;
 
-pygame.init()
+#def MoveRight():
+#    global xCoord
+#    xCoord += 1
 
-xsurface = pygame.display.set_mode((800, 600))
+#pygame.init()
 
-rec = Surface((50, 50))
+#xsurface = pygame.display.set_mode((800, 600))
 
-rec.fill((0, 255, 0))
+#rec = Surface((50, 50))
 
-pygame.display.set_caption("WINDOWZ")
+#rec.fill((0, 255, 0))
 
-while True:
-    for event in pygame.event.get():
-        if event.type == KEYDOWN:
-            move = True
-        if event.type == KEYUP:
-            move = False
-        if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
+#pygame.display.set_caption("WINDOWZ")
+
+#while True:
+#    for event in pygame.event.get():
+#        if event.type == KEYDOWN:
+#            move = True
+#        if event.type == KEYUP:
+#            move = False
+#        if event.type == QUIT:
+#            pygame.quit()
+#            sys.exit()
     
-    if move:
-        MoveRight()
+#    if move:
+#        MoveRight()
 
-    xsurface.fill((0, 0, 0))
-    xsurface.blit(rec, (xCoord, yCoord))
-    pygame.display.update()
+#    xsurface.fill((0, 0, 0))
+#    xsurface.blit(rec, (xCoord, yCoord))
+#    pygame.display.update()
+
+pongGame = Game.Game()
+pongGame.Start()
